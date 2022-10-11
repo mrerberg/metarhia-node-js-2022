@@ -31,13 +31,6 @@ const routing = {};
     routing[serviceName] = await load(filePath, sandbox);
   }
 
-
-  try {
-    staticServer("./static", config.staticServer.port, logger);
-    server(routing, config.api.port, logger);
-  } catch (error) {
-    // TODO: Пишется странный лог, плохо режется
-     logger.error(error);
-     throw new Error("Server error");
-  }
+  staticServer("./static", config.staticServer.port, logger);
+  server(routing, config.api.port, logger);
 })();

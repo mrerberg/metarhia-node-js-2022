@@ -57,6 +57,7 @@ class NativeLogger {
     this.write("debug", msg);
   }
 
+  // TODO: Пишется странный лог, плохо режется
   error(...args) {
     const msg = util.format(...args).replace(/[\n\r]{2,}/g, "\n");
     this.write("error", msg.replace(this.regexp, ""));
