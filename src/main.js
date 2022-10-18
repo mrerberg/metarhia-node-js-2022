@@ -11,8 +11,8 @@ const load = require("./load.js");
 // конфиги по всему приложению
 const db = require("./db.js")(config.dataBase);
 const hash = require("./hash.js")(config.cryptography);
-const logger = require("./logger")(config.logger);
-const server = require("./transports")(config.transport);
+const logger = require("./logger/index.js")(config.logger);
+const server = require("./transports/index.js")(config.transport);
 
 const sandbox = {
   console: Object.freeze(logger),
@@ -32,6 +32,7 @@ const routing = {};
   }
 
 
+  // TODO: Бахнуть try catch в каждую функцию отдельно
   try {
     staticServer("./static", config.staticServer.port, logger);
     server(routing, config.api.port, logger);
