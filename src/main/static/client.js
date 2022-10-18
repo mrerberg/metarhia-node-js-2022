@@ -35,7 +35,6 @@ const buildWsAPI = (url, structure) => {
   });
 
   return new Promise((resolve) => {
-    // TODO: socket.onopen?
     socket.addEventListener("open", () => resolve(api));
   });
 };
