@@ -110,14 +110,3 @@ const scaffold = (url, structure) => {
   const data2 = await api.user.read(1);
   console.dir({ data2 });
 })();
-
-// document.addEventListener("DOMContentLoaded", async () => {
-// const data = await api.user.read(1);
-// console.dir({ data });
-// document.getElementById("output").textContent = JSON.stringify(data);
-// });
-
-// socket.addEventListener('open', async () => {
-//   const data = await api.user.read(1);
-//   console.dir({ data });
-// });
