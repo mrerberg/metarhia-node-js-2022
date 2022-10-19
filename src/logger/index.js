@@ -7,7 +7,7 @@ const loggers = {
   pino: require("./pino.js"),
 };
 
-const getLogger = (options) => {
+const loggerContext = (options) => {
   const { name, dirName } = options;
   const logPath = path.join(process.cwd(), `./${dirName}`);
 
@@ -17,4 +17,4 @@ const getLogger = (options) => {
   return logger;
 };
 
-module.exports = (options) => getLogger(options);
+module.exports = (options) => loggerContext(options);
