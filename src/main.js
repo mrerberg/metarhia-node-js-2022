@@ -3,7 +3,7 @@
 const fsp = require("node:fs").promises;
 const path = require("node:path");
 
-const config = require("./config");
+const config = require("./config.js");
 const staticServer = require("./static.js");
 const load = require("./load.js");
 
@@ -12,6 +12,7 @@ const load = require("./load.js");
 const db = require("./db.js")(config.dataBase);
 const hash = require("./hash.js")(config.cryptography);
 const logger = require("./logger/index.js")(config.logger);
+// Паттерн стратегия
 const server = require("./transports/index.js")(config.transport);
 
 const sandbox = {

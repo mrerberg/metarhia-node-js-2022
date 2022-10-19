@@ -4,10 +4,10 @@ const transports = {
   fastify: require("./fastify.js"),
 };
 
-const getTransport = (transport) => {
+const transportContext = (transport) => {
   const server = transports[transport] || transports.http;
 
   return server;
 };
 
-module.exports = (transport) => getTransport(transport);
+module.exports = (transport) => transportContext(transport);
